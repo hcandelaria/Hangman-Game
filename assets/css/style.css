@@ -1,0 +1,19 @@
+#header{
+	position: relative;
+	top: 25%;
+}
+#guessing{
+	position: relative;
+	top: 25%;
+	letter-spacing: 40px;
+}
+.scorePosition{
+	position: relative;
+	bottom: 25%;
+	right: -30%;
+}
+@media screen and(min-width: 400px) {
+	#guessing{
+		letter-spacing: 2px;
+	}
+}

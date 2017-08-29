@@ -7,9 +7,28 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<!--My style.css-->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!--Jquery library-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-1 col-md-1"></div>
+			<div class="col-xs-10 col-md-10" id="gameWindow">
+				<h1 id="header" class="text-center">HANGMAN</h1>
+				<h3 id="guessing" class="text-center">
+					
+				</h3>
+				<img class="img-fluid" src="assets/images/background.jpeg">
+				<div class="scorePosition">
+					<h3 id="wins"></h3>
+					<h3 id="loses"></h3>
+					<h3 id="guessLeft"></h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-1 col-md-1"></div>
+	</div>
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
