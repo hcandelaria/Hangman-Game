@@ -9,25 +9,27 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!--Jquery library-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="utf-8">
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-1 col-md-1"></div>
-			<div class="col-xs-10 col-md-10" id="gameWindow">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" id="gameWindow">
 				<h1 id="header" class="text-center">HANGMAN</h1>
-				<h3 id="guessing" class="text-center">
-					
-				</h3>
+				<h3 id="guessing" class="text-center"></h3>
 				<img class="img-fluid" src="assets/images/background.jpeg">
+				<div id="topScreen"></div>
+				<div id="bottomScren"></div>
+				<h6 class="text-center" id="incorretKeys"></h6>
 				<div class="scorePosition">
-					<h3 id="wins"></h3>
-					<h3 id="loses"></h3>
-					<h3 id="guessLeft"></h3>
+					<h3 id="wins" class="text-center"></h3>
+					<h3 id="loses" class="text-center"></h3>
+					<h3 id="guessLeft" class="text-center"></h3>
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-1 col-md-1"></div>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
 	</div>
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

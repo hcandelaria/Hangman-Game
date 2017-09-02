@@ -16,9 +16,12 @@ $(document).ready(function(){
 		//Holds current key 
 		keyPressed: "",
 		//Array with possible words
-		wordsArr: ["patience","mahjong","chess","backgammon","sudok","blackjack", "poker","pyramid","draughts","minecraft",
-					"destiny","skyrim","gta","madden nfl", "monopoly","overwatch","dota","mario + rabbids", "splatoon"
+		wordsArr: ["Super Smash Bros","Pokemon","The Legend of Zelda","Mario Kart","Animal Crossing","Super Mario 3D Land", "Super Mario Maker",
+					"Luigi's Mansion","Fire Emblem","Monster Hunter Generation","Donkey Kong Country Returns","Dragon Quest","Kirbi: Triple Deluxe",
+					"Mario & Luigi","Yoshi's Wolly World"
 		],
+		//Array with possible letters
+		alphabet:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
 		//Array with incorrect keys
 		incorrectArr: [],
 		//Function to increase wins
@@ -67,6 +70,14 @@ $(document).ready(function(){
 					this.guessing.push(" ");
 				}else if(tempWord.charAt(i) === "+"){
 					this.guessing.push("+");
+				}else if (tempWord.charAt(i) === "'"){
+					this.guessing.push("'");
+				}else if (tempWord.charAt(i) === ":"){
+					this.guessing.push(":");
+				}else if (tempWord.charAt(i) === "3"){
+					this.guessing.push("3");
+				}else if (tempWord.charAt(i) === "&"){
+					this.guessing.push("&");
 				}
 				else{
 					this.guessing.push("_");
@@ -78,8 +89,8 @@ $(document).ready(function(){
 			var correct = false;
 			//Loops through array and check if the key letter is in the word
 			for (var i = 0; i < this.currentWord.length; i++) {
-				if(this.currentWord[i] === this.keyPressed){
-					this.guessing[i] = this.keyPressed;
+				if(this.currentWord[i].toLowerCase() === this.keyPressed){
+					this.guessing[i] = this.currentWord[i];
 					correct = true;
 				}
 			}
@@ -115,12 +126,14 @@ $(document).ready(function(){
 		    }
 		    	return true;
 		},
-    // $.each(drinkList, function (index, value) {
-    //   var newDiv = $ ("<div>");
-    //   newDiv.html(value);
-    //   $("#drink-options").append(newDiv);
-
-    // });
+		validKey: function(){
+			for (var i = 0; i < this.alphabet.length; i++) {
+				if(this.alphabet[i] === this.keyPressed){
+					return true;
+				}
+			}
+			return false;
+		}
 	};
 	//Pinks a new word
 	hangmanGame.pickWord();
@@ -139,12 +152,15 @@ $(document).ready(function(){
 	$(document).keyup(function() {
  		 	//Store the key pressed
 	 		hangmanGame.keyPressed = event.key;
-	 		//Check if key was already incorrect
-	 		if(hangmanGame.incorrectAnswer()){
-	 			//Calls checkLetter function
-	 			hangmanGame.checkLetter();
-	 		}
-	 		//Check if you guessed the word
+	 		//Check if key is a valid key
+	 		if(hangmanGame.validKey()){
+	 			//Check if key was already incorrect
+		 		if(hangmanGame.incorrectAnswer()){
+		 			//Calls checkLetter function
+		 			hangmanGame.checkLetter();
+		 		}
+		 	}
+	 		//Check if you guessed the words
 	 		if(hangmanGame.score()){
 	 			//Calls the increaseWins function
 	 			hangmanGame.increaseWins();
@@ -157,6 +173,12 @@ $(document).ready(function(){
 				var newDiv = $("<span>");
 				newDiv.html(value);
 				$("#guessing").append(newDiv);
+			});
+			$("#incorretKeys").html("");
+			$.each(hangmanGame.incorrectArr, function(index, value){
+				var newDiv = $("<span>");
+				newDiv.html(value);
+				$("#incorretKeys").append(newDiv);
 			});
 	});
 

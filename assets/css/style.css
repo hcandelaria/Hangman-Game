@@ -3,17 +3,48 @@
 	top: 25%;
 }
 #guessing{
+	width: 400px;
+	margin: 0 auto;
+	word-wrap: break-word;
 	position: relative;
 	top: 25%;
-	letter-spacing: 40px;
+	letter-spacing: 20px;
+}
+#incorretKeys{
+	position: relative;
+	bottom: 30%;
+	color: #AF0200;
+}
+#gameWindow{
+
 }
 .scorePosition{
 	position: relative;
 	bottom: 25%;
-	right: -30%;
 }
-@media screen and(min-width: 400px) {
-	#guessing{
-		letter-spacing: 2px;
+img{
+	width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+@media screen and (max-width: 360px) {
+	img{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 414px) {
+	img{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 768px) {
+	img{	
+		width: 100%;
+	}
+
+}
+@media screen and (max-width: 1024px) {
+	img{
+		width: 100%;
 	}
 }
