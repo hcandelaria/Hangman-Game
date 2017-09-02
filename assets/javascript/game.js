@@ -56,8 +56,6 @@ $(document).ready(function(){
 			//Var to hold a temporary word
 			var tempWord = this.wordsArr[ranNumber];
 			
-			//var newImg = $("<img id='topImg' src='assets/images/" + ranNumber +".jpg'>");
-			//$("#topScreen").append(newImg);
 
 			//reset guessLeft
 			this.resetGuess();
