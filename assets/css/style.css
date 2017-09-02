@@ -1,3 +1,8 @@
+img{
+	width: 50%;
+    display: block;
+    margin: 0 auto;
+}
 #header{
 	position: relative;
 	top: 25%;
@@ -10,22 +15,20 @@
 	top: 25%;
 	letter-spacing: 20px;
 }
+#topScreen{
+	position: relative;
+	width: 60%;
+	margin: 0 auto;
+	top: 20%;
+}
 #incorretKeys{
 	position: relative;
 	bottom: 30%;
 	color: #AF0200;
 }
-#gameWindow{
-
-}
 .scorePosition{
 	position: relative;
 	bottom: 25%;
-}
-img{
-	width: 50%;
-    display: block;
-    margin: 0 auto;
 }
 @media screen and (max-width: 360px) {
 	img{

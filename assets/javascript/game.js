@@ -18,7 +18,7 @@ $(document).ready(function(){
 		//Array with possible words
 		wordsArr: ["Super Smash Bros","Pokemon","The Legend of Zelda","Mario Kart","Animal Crossing","Super Mario 3D Land", "Super Mario Maker",
 					"Luigi's Mansion","Fire Emblem","Monster Hunter Generation","Donkey Kong Country Returns","Dragon Quest","Kirbi: Triple Deluxe",
-					"Mario & Luigi","Yoshi's Wolly World"
+					"Mario & Luigi","Yoshi's Wolly World","Metroid: Samus Returns"
 		],
 		//Array with possible letters
 		alphabet:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
@@ -51,8 +51,14 @@ $(document).ready(function(){
 		},
 		//Function to pick a new word
 		pickWord: function(){
+			//Var to hold a randome number
+			var ranNumber = Math.floor(Math.random() * this.wordsArr.length);
 			//Var to hold a temporary word
-			var tempWord = this.wordsArr[Math.floor(Math.random() * this.wordsArr.length)];
+			var tempWord = this.wordsArr[ranNumber];
+			
+			//var newImg = $("<img id='topImg' src='assets/images/" + ranNumber +".jpg'>");
+			//$("#topScreen").append(newImg);
+
 			//reset guessLeft
 			this.resetGuess();
 			//Clear guessing array
@@ -83,6 +89,7 @@ $(document).ready(function(){
 					this.guessing.push("_");
 				}
 			}
+
 		},
 		//Funtion to check if the letter is in the world
 		checkLetter: function(){
@@ -137,8 +144,7 @@ $(document).ready(function(){
 	};
 	//Pinks a new word
 	hangmanGame.pickWord();
-	//Testing function
-	hangmanGame.testFunction();
+	//Outputs score
 	$("#wins").html("Wins: " + hangmanGame.wins);
 	$("#loses").html("loses: " + hangmanGame.loses);
 	$("#guessLeft").html("Guess left: " + hangmanGame.guessLeft);
@@ -166,8 +172,7 @@ $(document).ready(function(){
 	 			hangmanGame.increaseWins();
 	 			hangmanGame.pickWord();
 	 		}
-	 		//testing function
-	 		hangmanGame.testFunction();
+
 	 		$("#guessing").html("");
 			$.each(hangmanGame.guessing, function(index,value){
 				var newDiv = $("<span>");
